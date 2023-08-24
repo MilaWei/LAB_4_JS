@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<h1>Динамічне заповнення списку</h1>
+<form name="sel">
+<!-- Порожній список посилань-->
+<select name="listOfLinks"></select>
+<!-- Кнопка активізації вибраного посилання-->
+<input type="button" value="Перехід" onclick="window.location.href=document.links[sel.listOfLinks.selectedIndex].href;">
+</form>
+<a href="https://rozetka.com.ua/"></a>
+<a href="https://allo.ua/"></a>
+<a href="https://www.olx.ua/"></a>
+<a href="https://www.zieit.edu.ua/"></a>
+<script>
+    for (i = 0; i < document.links.length; i++) {
+        // Створення 1-елемента списку та запис до нього посилання
+        document.sel.listOfLinks.options[i] = new Option(document.links[i].href, i);
+    }
+    // Виділення першого елемента у списку
+    document.sel.listOfLinks.options[0].selected = true;
+</script>
+</body>
+</html>
