@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<script> 
+function btnClick() {
+  if (document.test1.sex[0].checked) {
+    document.test1.sex[1].click();
+  } else {
+    document.test1.sex[0].click();
+  }
+}   
+</script> 
+</head> 
+<body> 
+<h1>Метод click групи перемикачів</h1> 
+<form name="test1"> 
+<input type="radio" name="sex" value="Man" checked>Чоловічий 
+<input type="radio" name="sex" value="Woman">Жіночий 
+<br>Стан перемикачів можна змінити цією кнопкою 
+<input type="button" value="Зміна стану" onclick="btnClick();">
+</form> 
+</body> 
+</html>
