@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body>
+<h1>Заповніть анкету</h1>
+<form name="sel1">
+<!-- Анкета -->
+<table>
+<tr><td><b>Прізвище:</b></td>
+<td><input name="family" size="20" onBlur="this.value=this.value.toUpperCase()"></td></tr>
+<tr><td><b>Iм'я:</b></td>
+<td><input name="name" size="20" onBlur="this.value=this.value.toUpperCase()"></td></tr>
+<tr><td><b>Вік:</b></td>
+<td><input name="age" size="3" value="18" onBlur="CheckAge(this);"></td></tr>
+<tr><td><b>Teлефон:</b></td>
+<td><input name="phone" size="10"></td></tr>
+</table>
+<!-- Кнопки готовності та скидання -->
+<input type="button" value="Ok" onclick="Complete();">
+<input type="reset" value="Cancel">
+</form>
+<script>
+function CheckAge(input) {
+    var age = parseInt(input.value);
+    if (age < 18) {
+        input.value = "18";
+    }
+}
+
+function Complete() {
+    let elem = "Прізвище: " + document.sel1.family.value + "\n" +
+               "Ім'я: " + document.sel1.name.value + "\n" +
+               "Вік: " + document.sel1.age.value + "\n" +
+               "Телефон: " + document.sel1.phone.value + "\n";
+    alert(elem);
+}
+</script>
+</body>
+</html>
